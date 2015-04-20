@@ -13,7 +13,7 @@ def encrypt(textName, midiName):
     pattern = midi.Pattern()
     track=midi.Track()
     pattern.append(track)
-    letters = ["a","b","c","d","e","f","g","h","i", "j", "k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"," ",".",",","!","?", '"',"`","&","'", "-",":",";","*","(",")","[","]","{","}","+","\n","\t", "\xe2", "\x80", "\x99", "\xef", "\xbb", "\xbf"]
+    letters = ["a","b","c","d","e","f","g","h","i", "j", "k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"," ",".",",","!","?", '"',"`","&","'", "-",":",";","*","(",")","[","]","{","}","+","\n","\t", "\xe2", "\x80", "\x99", "\xef", "\xbb", "\xbf", "\xc3", "\xa4"]
 
     for i in range(len(text)):
         x = letters.index(text[i])
@@ -25,7 +25,7 @@ def encrypt(textName, midiName):
     with open("midi.txt", "w") as file:
         file.write(str(pattern))
 
-encrypt(text, text)
+encrypt("text", "text")
 """
 secret = str(midi.read_midifile("text.mid"))
 #print str(midi.parse_track(midi.read_midifile("text.mid"), track))
